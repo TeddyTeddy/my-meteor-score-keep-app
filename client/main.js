@@ -31,4 +31,6 @@ Meteor.startup(function() {
     ReactDOM.render(jsx, document.getElementById('app'))
   });
 
+  // insert a new doc into collection
+  
 });
