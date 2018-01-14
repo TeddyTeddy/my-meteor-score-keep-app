@@ -5,12 +5,14 @@ import {Tracker} from 'meteor/tracker';
 
 import {Players} from './../imports/api/players'
 
+// DELETE THIS
 // autorun monitors the queries executed inside the function
 // and one of the queries changes it re-runs the function
 Tracker.autorun(function () {
   console.log('Players list', Players.find().fetch()); // sync call
 });
 
+// DELETE THIS
 const players = [{
   _id:'1',
   name : 'Lauren',
@@ -37,8 +39,13 @@ const renderPlayers = function(playersList) {
   });
 };
 
+// once the dom ready (rendered)
 Meteor.startup(function() {
-  // once the dom ready (rendered)
+  // call Tracker.autorun
+  //   create variable called players -> set equal to fetch query
+  // Render players to the screen
+
+
   // render some JSX-JavaScript-XML to screen
   let title = 'Score Keep';
   let name = 'Andrew';
