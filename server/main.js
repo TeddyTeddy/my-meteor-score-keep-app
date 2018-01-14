@@ -7,6 +7,10 @@ Meteor.startup(function() {
   Players.insert({
     name: 'Andrew',
     score: 3
-  });
-  console.log(Players.find().fetch());
+  });  // snyc call
+  Players.insert({
+    name: 'Hakan',
+    score: 1
+  });  // snyc call
+  console.log(Players.find().fetch()); // sync call
 });
