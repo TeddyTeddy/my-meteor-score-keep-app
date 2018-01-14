@@ -1,0 +1,20 @@
+Create a new meteor project
+meteor create hello-meteor
+
+meteor npm install
+meteor run
+
+create a new meteor project on top of certain meteor release
+meteor create --release 1.6.0.1 score-keep
+
+meteor npm install
+meteor run
+
+meteor npm install react@16.2.0 react-dom@16.2.0 --save
+
+// diving into package.json and install all the dependencies
+meteor npm install
+
+
+
+
