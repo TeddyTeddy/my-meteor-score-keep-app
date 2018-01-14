@@ -1,6 +1,11 @@
 import React from 'react'; // no need to specify npm modules' path
 import ReactDOM from 'react-dom'; // no need to specify npm modules' path
 import {Meteor} from 'meteor/meteor'; // import the named export from meteor
+import {Players} from './../imports/api/players'
+
+setTimeout(function() {
+  console.log('Players list', Players.find().fetch()); // sync call
+}, 1000);
 
 const players = [{
   _id:'1',
