@@ -1,11 +1,15 @@
 import React from 'react'; // no need to specify npm modules' path
 import ReactDOM from 'react-dom'; // no need to specify npm modules' path
 import {Meteor} from 'meteor/meteor'; // import the named export from meteor
+import {Tracker} from 'meteor/tracker';
+
 import {Players} from './../imports/api/players'
 
-setTimeout(function() {
+// autorun monitors the queries executed inside the function
+// and one of the queries changes it re-runs the function
+Tracker.autorun(function () {
   console.log('Players list', Players.find().fetch()); // sync call
-}, 1000);
+});
 
 const players = [{
   _id:'1',
