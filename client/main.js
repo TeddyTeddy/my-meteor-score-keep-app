@@ -31,6 +31,8 @@ Meteor.startup(function() {
     ReactDOM.render(jsx, document.getElementById('app'))
   });
 
-  // insert a new doc into collection
-  
+  Players.insert({
+    name: 'Superman',
+    score: 14
+  });  // snyc call
 });
