@@ -26,6 +26,10 @@ Meteor.startup(function() {
         {/*Render h1 tag with title var as text*/}
         <h1>{title}</h1>
         {renderPlayers(players)}
+        <form>
+          <input type="text" name="playerName" placeholder="Player Name"></input>
+          <button>Add Player</button>
+        </form>
       </div>
     );
     ReactDOM.render(jsx, document.getElementById('app'))
