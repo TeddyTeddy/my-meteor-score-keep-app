@@ -15,14 +15,18 @@ const renderPlayers = function(playersList) {
 const handleSubmit = function(event) {
   // event is for the form
   // event.target is form
-  let playerName = e.target.playerName.value; // Name value entered by user
+  let playerName = event.target.playerName.value; // Name value entered by user
   event.preventDefault(); // will stop reloading the page
   if(playerName) {
     // clear out the value that is set to the form
     event.target.playerName.value = '';
     // the challange: players insert
     // insert the user entered player value and a score of 0
-    
+    // DELETE THIS
+    Players.insert({
+      name: playerName,
+      score: 0
+    });  // snyc call
   }
 };
 
@@ -48,10 +52,4 @@ Meteor.startup(function() {
     );
     ReactDOM.render(jsx, document.getElementById('app'))
   });
-
-  // DELETE THIS
-  Players.insert({
-    name: 'Superman',
-    score: 14
-  });  // snyc call
 });
