@@ -20,3 +20,23 @@ meteor reset --release 1.6.0.1
 
 // Clear players Collection using mongo db command line
 db.players.remove( {} )
+
+// Finding all documents in players collection
+meteor:PRIMARY> db.players.find()
+{ "_id" : "sDoPQFKrpfazXAHib", "name" : "Hakan", "score" : 0 }
+{ "_id" : "CXheg7wjSoCQJpnra", "name" : "Helena", "score" : 0 }
+
+// Finding documents whose name starts with Hakan
+meteor:PRIMARY> db.players.find({name: 'Hakan'})
+{ "_id" : "sDoPQFKrpfazXAHib", "name" : "Hakan", "score" : 0 }
+
+// Finding documents whose score is 0
+meteor:PRIMARY> db.players.find({score: 0})
+{ "_id" : "sDoPQFKrpfazXAHib", "name" : "Hakan", "score" : 0 }
+{ "_id" : "CXheg7wjSoCQJpnra", "name" : "Helena", "score" : 0 }
+
+// Removing a document with a specific _id
+meteor:PRIMARY> db.players.remove({_id: 'sDoPQFKrpfazXAHib'})
+WriteResult({ "nRemoved" : 1 })
+meteor:PRIMARY> db.players.find()
+{ "_id" : "CXheg7wjSoCQJpnra", "name" : "Helena", "score" : 0 }
