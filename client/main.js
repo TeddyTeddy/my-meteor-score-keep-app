@@ -6,13 +6,11 @@ import {Tracker} from 'meteor/tracker';
 import {Players} from './../imports/api/players'
 
 // how do we get the players array into JSX?
-const renderPlayers = function(playersList) {
-  return playersList.map(function (player) {
-    return <p key={player._id}>{player.name} has a score {player.score}</p>;
-  });
+const renderPlayers = (playersList) => {
+  return playersList.map( player => <p key={player._id}>{player.name} has a score {player.score}</p> );
 };
 
-const handleSubmit = function(event) {
+const handleSubmit = (event) => {
   // event is for the form
   // event.target is form
   let playerName = event.target.playerName.value; // Name value entered by user
@@ -30,10 +28,10 @@ const handleSubmit = function(event) {
 };
 
 // once the dom ready (rendered)
-Meteor.startup(function() {
+Meteor.startup( () => {
   // autorun monitors the queries executed inside the function
   // and one of the queries changes it re-runs the function
-  Tracker.autorun(function () {
+  Tracker.autorun( () => {
     let players = Players.find().fetch(); // sync call
     // render some JSX-JavaScript-XML to screen
     let title = 'Score Keep';
