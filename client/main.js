@@ -22,7 +22,6 @@ const handleSubmit = function(event) {
     event.target.playerName.value = '';
     // the challange: players insert
     // insert the user entered player value and a score of 0
-    // DELETE THIS
     Players.insert({
       name: playerName,
       score: 0
