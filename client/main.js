@@ -7,7 +7,13 @@ import {Players} from './../imports/api/players'
 
 // how do we get the players array into JSX?
 const renderPlayers = (playersList) => {
-  return playersList.map( player => <p key={player._id}>{player.name} has a score {player.score}</p> );
+  return playersList.map( player => (
+    <p key={player._id}>
+      {player.name} has {player.score} point(s).
+      <button onClick={() => {
+          alert('Deleted')
+      }}>X</button>
+    </p>) );
 };
 
 const handleSubmit = (event) => {
