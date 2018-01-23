@@ -40,3 +40,6 @@ meteor:PRIMARY> db.players.remove({_id: 'sDoPQFKrpfazXAHib'})
 WriteResult({ "nRemoved" : 1 })
 meteor:PRIMARY> db.players.find()
 { "_id" : "CXheg7wjSoCQJpnra", "name" : "Helena", "score" : 0 }
+
+// Updating a certain field in a document in MongoDB
+db.players.update({_id: 'rRQM5YNZFsekqvHtZ'},{$set: {score: 10}})
