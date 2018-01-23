@@ -43,3 +43,6 @@ meteor:PRIMARY> db.players.find()
 
 // Updating a certain field in a document in MongoDB
 db.players.update({_id: 'rRQM5YNZFsekqvHtZ'},{$set: {score: 10}})
+
+// incrementing the score by 1 in a document
+db.players.update({_id: 'rRQM5YNZFsekqvHtZ'},{$inc: {score: 1}})
