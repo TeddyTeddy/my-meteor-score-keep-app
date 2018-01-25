@@ -33,6 +33,16 @@ Meteor.startup(() => {
     }
   }
 
+  // Programmer extends person
+  // name, age, preferredLanguage defaults to 'assembly'
+  // override GetGreeting for the Programmer
+  //    Hi! I am Andrew. I am a Assembly developer
+
+  // Create 2 brand new programmers
+  // one with assembly
+  // one with ES2015
+
+
   let person = new Employee('David', 10);
   console.log(person.getGreeting());
   console.log(person.getPersonDescription());
