@@ -15,7 +15,31 @@ Meteor.startup(() => {
       return `${this.name} is ${this.age} years old`;// Andrew is 25 years old
     }
   }
-  let me = new Person('Mike', 10);
+
+  class Employee extends Person {
+    constructor(name, age, title) {
+      super(name, age);
+      this.title = title;
+    }
+    getGreeting() {
+      if(this.title) {
+        return `Hi! I am ${this.name}. I work as ${this.title}`;  // Hi! I am Andrew
+      } else {
+        return super.getGreeting();
+      }
+    }
+    hasJob() {
+      return !!this.title;
+    }
+  }
+
+  let person = new Employee('David', 10);
+  console.log(person.getGreeting());
+  console.log(person.getPersonDescription());
+  console.log(person.hasJob());
+
+  let me = new Employee('Mike', 10, 'db admin');
   console.log(me.getGreeting());
   console.log(me.getPersonDescription());
+  console.log(me.hasJob());
 });
