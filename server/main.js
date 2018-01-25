@@ -33,16 +33,6 @@ Meteor.startup(() => {
     }
   }
 
-  // Programmer extends person
-  // name, age, preferredLanguage defaults to 'assembly'
-  // override GetGreeting for the Programmer
-  //    Hi! I am Andrew. I am a Assembly developer
-
-  // Create 2 brand new programmers
-  // one with assembly
-  // one with ES2015
-
-
   let person = new Employee('David', 10);
   console.log(person.getGreeting());
   console.log(person.getPersonDescription());
@@ -52,4 +42,24 @@ Meteor.startup(() => {
   console.log(me.getGreeting());
   console.log(me.getPersonDescription());
   console.log(me.hasJob());
+
+  class Programmer extends Person {
+    constructor(name, age, preferredLanguage = 'assembly') {
+      super(name, age);
+      this.preferredLanguage = preferredLanguage;
+    }
+    getGreeting() {
+      //    Hi! I am Andrew. I am a Assembly developer
+      return `Hi! I am ${this.name}. I am a ${this.preferredLanguage} programmer`;
+    }
+  }
+
+  let programmerOne = new Programmer('Gokhan', 40, 'ES2015' );
+  console.log(programmerOne.getGreeting());
+
+  let programmerTwo = new Programmer('Hakan', 40 );
+  console.log(programmerTwo.getGreeting());
+
+
+
 });
