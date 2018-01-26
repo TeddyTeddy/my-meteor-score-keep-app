@@ -43,10 +43,11 @@ Meteor.startup( () => {
     let players = Players.find().fetch(); // sync call
     // render some JSX-JavaScript-XML to screen
     let title = 'Score Keep';
+    let subtitle = 'Provided by Hakan Cuzdan';
     let jsx = (
       <div>
         {/*Render h1 tag with title var as text*/}
-        <TitleBar title={title}/>
+        <TitleBar title={title} subtitle={subtitle}/>
         {renderPlayers(players)}
         <AddPlayer/>
         <form onSubmit={handleSubmit}>
