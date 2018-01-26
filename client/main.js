@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom'; // no need to specify npm modules' path
 import {Meteor} from 'meteor/meteor'; // import the named export from meteor
 import {Tracker} from 'meteor/tracker';
 
-import {Players} from './../imports/api/players'
+import {Players} from './../imports/api/players';
+import TitleBar from './../imports/ui/TitleBar';
 
 // how do we get the players array into JSX?
 const renderPlayers = (playersList) => {
@@ -32,16 +33,6 @@ const handleSubmit = (event) => {
     });  // snyc call
   }
 };
-
-class TitleBar extends React.Component {
-  render() {
-    return (
-      <div>
-          <h1>My App Name</h1>
-      </div>
-    );
-  }
-}
 
 // once the dom ready (rendered)
 Meteor.startup( () => {
