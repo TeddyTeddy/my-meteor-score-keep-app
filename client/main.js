@@ -33,6 +33,16 @@ const handleSubmit = (event) => {
   }
 };
 
+class TitleBar extends React.Component {
+  render() {
+    return (
+      <div>
+          <h1>My App Name</h1>
+      </div>
+    );
+  }
+}
+
 // once the dom ready (rendered)
 Meteor.startup( () => {
   // autorun monitors the queries executed inside the function
@@ -41,11 +51,10 @@ Meteor.startup( () => {
     let players = Players.find().fetch(); // sync call
     // render some JSX-JavaScript-XML to screen
     let title = 'Score Keep';
-    let name = 'Andrew';
     let jsx = (
       <div>
         {/*Render h1 tag with title var as text*/}
-        <h1>{title}</h1>
+        <TitleBar/>
         {renderPlayers(players)}
         <form onSubmit={handleSubmit}>
           <input type="text" name="playerName" placeholder="Player Name"></input>
