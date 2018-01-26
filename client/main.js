@@ -46,7 +46,7 @@ Meteor.startup( () => {
     let jsx = (
       <div>
         {/*Render h1 tag with title var as text*/}
-        <TitleBar/>
+        <TitleBar title={title}/>
         {renderPlayers(players)}
         <AddPlayer/>
         <form onSubmit={handleSubmit}>
