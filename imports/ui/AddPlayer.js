@@ -10,7 +10,7 @@ export default class AddPlayer extends React.Component {
       event.target.playerName.value = '';
       Players.insert({
         name: playerName,
-        score: this.props.score
+        score: 0
       });  // snyc call
     }
   }
