@@ -18,23 +18,6 @@ const renderPlayers = (playersList) => {
     </p>) );
 };
 
-const handleSubmit = (event) => {
-  // event is for the form
-  // event.target is form
-  let playerName = event.target.playerName.value; // Name value entered by user
-  event.preventDefault(); // will stop reloading the page
-  if(playerName) {
-    // clear out the value that is set to the form
-    event.target.playerName.value = '';
-    // the challange: players insert
-    // insert the user entered player value and a score of 0
-    Players.insert({
-      name: playerName,
-      score: 0
-    });  // snyc call
-  }
-};
-
 // once the dom ready (rendered)
 Meteor.startup( () => {
   // autorun monitors the queries executed inside the function
@@ -50,10 +33,6 @@ Meteor.startup( () => {
         <TitleBar title={title} subtitle={subtitle}/>
         {renderPlayers(players)}
         <AddPlayer/>
-        <form onSubmit={handleSubmit}>
-          <input type="text" name="playerName" placeholder="Player Name"></input>
-          <button>Add Player</button>
-        </form>
       </div>
     );
     ReactDOM.render(jsx, document.getElementById('app'))
