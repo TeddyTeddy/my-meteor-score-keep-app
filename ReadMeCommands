@@ -46,3 +46,6 @@ db.players.update({_id: 'rRQM5YNZFsekqvHtZ'},{$set: {score: 10}})
 
 // incrementing the score by 1 in a document
 db.players.update({_id: 'rRQM5YNZFsekqvHtZ'},{$inc: {score: 1}})
+
+// install prop-types package
+meteor npm install prop-types --save
