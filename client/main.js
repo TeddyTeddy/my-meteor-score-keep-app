@@ -6,10 +6,11 @@ import {Tracker} from 'meteor/tracker';
 import {Players} from './../imports/api/players';
 import TitleBar from './../imports/ui/TitleBar';
 import AddPlayer from './../imports/ui/AddPlayer';
+import Player from './../imports/ui/Player';
 
 // how do we get the players array into JSX?
 const renderPlayers = (playersList) => {
-  return playersList.map( player => (
+  return playersList.map( player => {
     return <Player key={player._id}/>;
     // <p key={player._id}>
     //   {player.name} has {player.score} point(s).
@@ -17,7 +18,7 @@ const renderPlayers = (playersList) => {
     //   <button onClick={() => Players.update(player._id, {$inc: {score: -1}})}>-1</button>
     //   <button onClick={() => Players.remove(player._id)}>X</button>
     // </p>)
-  );
+  });
 };
 
 // once the dom ready (rendered)
