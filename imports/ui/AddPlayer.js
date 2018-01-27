@@ -10,14 +10,14 @@ export default class AddPlayer extends React.Component {
       event.target.playerName.value = '';
       Players.insert({
         name: playerName,
-        score: 0
+        score: this.props.score
       });  // snyc call
     }
   }
   render() {
     return (
       <div>
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleSubmit.bind(this)}>
           <input type="text" name="playerName" placeholder="Player Name"></input>
           <button>Add Player</button>
         </form>
