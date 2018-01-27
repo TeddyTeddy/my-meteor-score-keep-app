@@ -10,12 +10,14 @@ import AddPlayer from './../imports/ui/AddPlayer';
 // how do we get the players array into JSX?
 const renderPlayers = (playersList) => {
   return playersList.map( player => (
-    <p key={player._id}>
-      {player.name} has {player.score} point(s).
-      <button onClick={() => Players.update(player._id, {$inc: {score: 1}})}>+1</button>
-      <button onClick={() => Players.update(player._id, {$inc: {score: -1}})}>-1</button>
-      <button onClick={() => Players.remove(player._id)}>X</button>
-    </p>) );
+    return <Player key={player._id}/>;
+    // <p key={player._id}>
+    //   {player.name} has {player.score} point(s).
+    //   <button onClick={() => Players.update(player._id, {$inc: {score: 1}})}>+1</button>
+    //   <button onClick={() => Players.update(player._id, {$inc: {score: -1}})}>-1</button>
+    //   <button onClick={() => Players.remove(player._id)}>X</button>
+    // </p>)
+  );
 };
 
 // once the dom ready (rendered)
