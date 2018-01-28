@@ -4,9 +4,11 @@ import {Meteor} from 'meteor/meteor'; // import the named export from meteor
 import {Tracker} from 'meteor/tracker';
 
 import {Players} from './../imports/api/players';
+import App from './../imports/ui/App'
 import TitleBar from './../imports/ui/TitleBar';
 import AddPlayer from './../imports/ui/AddPlayer';
 import PlayerList from './../imports/ui/PlayerList'
+
 
 // once the dom ready (rendered)
 Meteor.startup( () => {
