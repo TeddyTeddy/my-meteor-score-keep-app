@@ -7,6 +7,7 @@ import {Players} from './../imports/api/players';
 import TitleBar from './../imports/ui/TitleBar';
 import AddPlayer from './../imports/ui/AddPlayer';
 import Player from './../imports/ui/Player';
+import PlayerList from './../imports/ui/PlayerList'
 
 // how do we get the players array into JSX?
 const renderPlayers = (playersList) => {
@@ -29,6 +30,7 @@ Meteor.startup( () => {
         {/*Render h1 tag with title var as text*/}
         <TitleBar title={title} subtitle={subtitle}/>
         {renderPlayers(players)}
+        <PlayerList/>
         <AddPlayer/>
       </div>
     );
