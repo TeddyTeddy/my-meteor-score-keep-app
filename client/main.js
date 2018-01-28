@@ -27,6 +27,6 @@ Meteor.startup( () => {
         <AddPlayer/>
       </div>
     );
-    ReactDOM.render(jsx, document.getElementById('app'))
+    ReactDOM.render(<App/>, document.getElementById('app'))
   });
 });
