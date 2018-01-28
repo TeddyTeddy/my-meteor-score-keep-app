@@ -11,7 +11,7 @@ Meteor.startup( () => {
   // autorun monitors the queries executed inside the function
   // and one of the queries changes it re-runs the function
   Tracker.autorun( () => {
-    let players = Players.find().fetch(); // sync call
+    let players = Players.find({},{sort: {score:-1}}).fetch(); // sync call
     let title = 'Score Keep';
     ReactDOM.render(<App title={title} players={players}/>, document.getElementById('app'))
   });

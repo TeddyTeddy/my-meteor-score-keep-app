@@ -38,7 +38,7 @@ meteor:PRIMARY> db.players.find({score: 0})
 // Removing a document with a specific _id
 meteor:PRIMARY> db.players.remove({_id: 'sDoPQFKrpfazXAHib'})
 WriteResult({ "nRemoved" : 1 })
-meteor:PRIMARY> db.players.find()
+meteor:PRIMARY> db.players.find()215d2a3
 { "_id" : "CXheg7wjSoCQJpnra", "name" : "Helena", "score" : 0 }
 
 // Updating a certain field in a document in MongoDB
@@ -47,5 +47,19 @@ db.players.update({_id: 'rRQM5YNZFsekqvHtZ'},{$set: {score: 10}})
 // incrementing the score by 1 in a document
 db.players.update({_id: 'rRQM5YNZFsekqvHtZ'},{$inc: {score: 1}})
 
-// install prop-types package
-meteor npm install prop-types --save
+// ASCENDING AND DESCENTING SORTING
+meteor:PRIMARY> db.players.find()
+{ "_id" : "BwEsWDkemEh5GNmuh", "name" : "dsad", "score" : 3 }
+{ "_id" : "gNbZ5hQpbLr9rpz7X", "name" : "das", "score" : 5 }
+{ "_id" : "JQGtPZYpCkJMYWhwr", "name" : "fdsfg", "score" : 6 }
+{ "_id" : "B5pmkjXbNjMrJz37A", "name" : "sa", "score" : -4 }
+meteor:PRIMARY> db.players.find().sort({score: 1})
+{ "_id" : "B5pmkjXbNjMrJz37A", "name" : "sa", "score" : -4 }
+{ "_id" : "BwEsWDkemEh5GNmuh", "name" : "dsad", "score" : 3 }
+{ "_id" : "gNbZ5hQpbLr9rpz7X", "name" : "das", "score" : 5 }
+{ "_id" : "JQGtPZYpCkJMYWhwr", "name" : "fdsfg", "score" : 6 }
+meteor:PRIMARY> db.players.find().sort({score: -1})
+{ "_id" : "JQGtPZYpCkJMYWhwr", "name" : "fdsfg", "score" : 6 }
+{ "_id" : "gNbZ5hQpbLr9rpz7X", "name" : "das", "score" : 5 }
+{ "_id" : "BwEsWDkemEh5GNmuh", "name" : "dsad", "score" : 3 }
+{ "_id" : "B5pmkjXbNjMrJz37A", "name" : "sa", "score" : -4 }
