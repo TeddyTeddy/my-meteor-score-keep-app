@@ -63,3 +63,9 @@ meteor:PRIMARY> db.players.find().sort({score: -1})
 { "_id" : "gNbZ5hQpbLr9rpz7X", "name" : "das", "score" : 5 }
 { "_id" : "BwEsWDkemEh5GNmuh", "name" : "dsad", "score" : 3 }
 { "_id" : "B5pmkjXbNjMrJz37A", "name" : "sa", "score" : -4 }
+
+// How to install fourseven:scss to score keep project
+meteor add fourseven:scss@3.10.1 --release 1.6.0.1
+
+// How to remove fourseven:scss from score keep project
+meteor remove fourseven:scss@3.10.1 --release 1.6.0.1
