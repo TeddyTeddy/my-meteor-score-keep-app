@@ -8,11 +8,11 @@ export default class App extends React.Component {
   render() {
     return (
       <div>
-        {/*Render h1 tag with title var as text*/}
         <TitleBar title={this.props.title} subtitle={this.props.subtitle}/>
-        {/* Create div with wrapper class. Add PlayerList & AddPlayer inside*/}
-        <PlayerList players={this.props.players}/>
-        <AddPlayer/>
+        <div className='wrapper'>
+          <PlayerList players={this.props.players}/>
+          <AddPlayer/>
+        </div>
       </div>
     );
   }
