@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'; // no need to specify npm modules' path
 import {Meteor} from 'meteor/meteor'; // import the named export from meteor
 import {Tracker} from 'meteor/tracker';
 
-import {Players} from './../imports/api/players';
+import {Players, calculatePlayerPositions} from './../imports/api/players';
 import App from './../imports/ui/App'
 
 // once the dom ready (rendered)
@@ -12,8 +12,9 @@ Meteor.startup( () => {
   // and one of the queries changes it re-runs the function
   Tracker.autorun( () => {
     let players = Players.find({},{sort: {score:-1}}).fetch(); // sync call
+    let positionedPlayers = calculatePlayerPositions(players);
     let title = 'Score Keep';
     let subtitle = 'Created by Hakan Cuzdan';
-    ReactDOM.render(<App title={title} subtitle={subtitle} players={players}/>, document.getElementById('app'))
+    ReactDOM.render(<App title={title} subtitle={subtitle} players={positionedPlayers}/>, document.getElementById('app'))
   });
 });
